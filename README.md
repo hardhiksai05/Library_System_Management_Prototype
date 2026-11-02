@@ -1,367 +1,334 @@
 # 📚 Smart University Library Management System
 
-<p align="center">
-  <strong>🎓 Intelligent Library Management & Navigation Platform</strong>
-  <br/>
-  A modern, interactive university library management solution inspired by LPU.
-</p>
-
-<p align="center">
-  ![Next.js](https://img.shields.io/badge/Next.js-React-black?logo=next.js)
-  ![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript)
-  ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwindcss)
-  ![Status](https://img.shields.io/badge/Status-Prototype-orange)
-  ![License](https://img.shields.io/badge/License-MIT-green)
-</p>
+A modern, web-based university library management prototype designed to simplify library operations through a centralized platform with separate dashboards for Students, Staff, and Administrators.
 
 ---
 
-## 🌟 Overview
+## 📌 Project Summary
 
-The **Smart University Library Management System (LMS)** is a web-based platform designed to simplify and modernize university library operations.
+The Smart University Library Management System aims to digitize and improve traditional university library operations.
 
-It provides students with an easy way to search for books, locate them inside the library, check availability, reserve study seats and book study rooms.
+Students can search for books, check availability, locate books using an interactive library map, reserve study-room seats, track borrowed books, and view penalties.
 
-The platform also provides dedicated dashboards for library staff and administrators to manage books, students, reservations, overdue records and library operations.
+Library staff can manage book issuing and returns, monitor reservations, maintain student records, and manage overdue books.
 
-### 🎯 Main Objectives
+Administrators can manage users, books, library facilities, room configurations, penalty settings, announcements, and reports.
 
-- 📖 Simplify book searching and borrowing.
-- 📍 Help students locate books through interactive library maps.
-- 💺 Provide real-time-style seat availability.
-- 🏢 Enable one-hour study room reservations.
-- 🔔 Notify students about upcoming book return dates.
-- ⚙️ Simplify library administration and staff operations.
-- 📊 Provide centralized library management and analytics.
+The project demonstrates an integrated library management solution using modern frontend technologies and LocalStorage for prototype data persistence.
 
----
+## 🎯 Project Objectives
+
+- Simplify book searching and borrowing.
+- Provide interactive book-location navigation.
+- Display library seating availability.
+- Enable study-room reservations.
+- Automate book due-date calculations.
+- Calculate overdue penalties.
+- Provide role-based dashboards.
+- Improve library management and monitoring.
 
 ## ✨ Key Features
 
-### 📚 1. Smart Book Discovery
-- Search books by title, author, ISBN and category.
-- Advanced book filters.
-- Check book availability.
-- View book descriptions and editions.
-- View total and available copies.
-- Find exact book locations.
+### 🔐 1. Role-Based Authentication
 
-### 🗺️ 2. Interactive Library Map
-- Floor-wise library navigation.
-- Section identification.
-- Rack and shelf information.
-- Highlight the location of searched books.
-- Interactive schematic floor maps.
+Three user roles with separate dashboards.
 
-### 📖 3. Book Issue & Return Management
-- Issue books to students.
-- Record returned books.
-- Automatically calculate return dates.
-- Track borrowed books.
-- Maintain borrowing history.
-- Identify overdue books.
+| Role | Demo User ID | Password |
+|---|---|---|
+| Student | `User1` | `User@1234` |
+| Staff | `Staff1` | `Staff@1234` |
+| Admin | `Admin1` | `Admin@1234` |
 
-<details>
-<summary><strong>📅 Book Borrowing Policy</strong></summary>
+Features:
+- Common login page.
+- Automatic role-based redirection.
+- Form validation.
+- Show/hide password.
+- Session persistence.
+- Logout functionality.
 
-- Maximum borrowing duration: **14 days (2 weeks)**.
-- Due dates are calculated automatically.
-- Students receive due date reminders.
-- Books not returned on time are marked overdue.
-- Applicable penalties are calculated according to administrator-configured rates.
+### 📚 2. Book Management
 
-</details>
+- Search by title, author, ISBN, and category.
+- Filter books by availability.
+- View complete book details.
+- Track available and issued copies.
+- Display floor, section, rack, and shelf.
+- Recently added books.
 
-### 🏢 4. Smart Room Booking
+**Book availability indicators:**
 
-An interactive room reservation system for students.
+- 🟢 Available
+- 🔵 Issued
+- 🟠 Reserved
+- 🔴 Overdue
 
-**Library Room Configuration**
+### 🗺️ 3. Interactive Library Map
+
+- Floor-wise navigation.
+- Interactive sections and racks.
+- Shelf identification.
+- Book-location highlighting.
+- Search-to-location functionality.
+
+Note: The map represents a prototype layout, not a verified official university floor plan.
+
+### 📅 4. Book Issue and Return
+
+- Staff can issue books to students.
+- Automatic issue-date recording.
+- Automatic due-date calculation.
+- Maximum borrowing period of 14 days.
+- Inventory updates.
+- Book return processing.
+- Overdue detection.
+- Borrowing history.
+
+### 🏢 5. Study Room Booking
+
+Students can reserve dedicated study rooms.
+
+**Room configuration:**
 
 | Configuration | Quantity |
 |---|---:|
 | Floors | 4 |
-| Floors Covered | 2nd–5th |
-| Rooms per Floor | 6 |
-| Seats per Room | 8 |
-| Total Rooms | 24 |
-| Total Seats | 192 |
+| Rooms per floor | 6 |
+| Seats per room | 8 |
+| Total rooms | 24 |
+| Total dedicated seats | 192 |
 
-**Booking Features**
-- Select a floor.
-- Select a room.
-- View all eight seats.
-- Select an available seat.
-- Choose a booking time.
-- Confirm reservations.
-- View booking history.
+**Booking features:**
+
+- Select floor, room, and seat.
+- Choose booking date and start time.
+- Automatic one-hour booking duration.
+- Prevent overlapping seat reservations.
 - Cancel reservations.
+- View booking history.
+- Automatically release expired reservations.
 
-**⏰ Booking Policy**
-
-Every reservation lasts exactly **1 hour**.
-
-Example:
-
-| Booking Detail | Value |
-|---|---|
-| Floor | 4th Floor |
-| Room | Room 3 |
-| Seat | S5 |
-| Start Time | 10:00 AM |
-| End Time | 11:00 AM |
-| Duration | 1 Hour |
-
-After the booking expires, the seat automatically becomes available for another student.
-
-### 💺 5. Seat Availability
-- Floor-wise seat availability.
-- Available and occupied seat indicators.
-- Interactive seating layouts.
-- Occupancy statistics.
-- Seat availability updates.
-
-### 🔔 6. Smart Notification System
-- Upcoming due date reminders.
-- Overdue book notifications.
-- Book reservation confirmations.
-- Book availability alerts.
-- Seat booking confirmations.
-- Room booking reminders.
-- Library announcements.
-
-### 💰 7. Penalty Management
-
-A configurable overdue penalty calculation system.
-
-**Penalty Formula**
-
-`Total Penalty = Delayed Days × Applicable Daily Penalty Rate`
-
-Example:
+**Example booking:**
 
 | Detail | Value |
-|---|---:|
-| Delayed Days | 5 |
-| Penalty Rate | ₹5/day |
-| Total Penalty | ₹25 |
+|---|---|
+| Floor | 4 |
+| Room | 3 |
+| Seat | S5 |
+| Start | 10:00 AM |
+| End | 11:00 AM |
+| Duration | 1 Hour |
 
-**Administrator Controls**
-- Configure default penalty rates.
-- Set individual penalty rates for any book.
-- Configure category-based penalty rates.
-- View overdue records.
-- Monitor student penalty history.
-- Update penalty configurations.
+**Seat indicators:**
 
-**Penalty Priority**
+- 🟢 Available
+- 🔴 Booked
+- 🔵 Selected
+- ⚪ Temporarily unavailable
 
-1. Individual book penalty rate.
-2. Category penalty rate.
-3. Default library penalty rate.
+### 🪑 6. General Library Seat Availability
 
-No online payment gateway is included.
+- Floor-wise seat availability.
+- Total, occupied, and available seats.
+- Visual seating layout.
+- Occupancy percentage.
+- Prototype availability updates.
 
----
+General library seating is separate from dedicated study-room seats.
 
-## 👥 User Roles & Dashboards
+### 🔔 7. Notification Management
 
-The application provides three role-based dashboards.
+Notifications for:
 
-### 🎓 Student Dashboard
+- Book due-date reminders.
+- Overdue alerts.
+- Book reservation confirmations.
+- Seat reservation confirmations.
+- Study-room booking confirmations.
+- Booking expiry reminders.
+- Library announcements.
 
-- Search and discover books.
-- Find book locations.
-- Check book availability.
-- View borrowing history.
-- Check due dates.
-- Reserve study seats.
-- Book study rooms.
-- Receive notifications.
-- View overdue penalties.
+Additional features:
 
-### 👨‍💼 Staff Dashboard
+- Read/unread status.
+- Unread notification count.
+- Timestamps.
+- Clear notifications.
 
-- Search student records.
-- Issue books.
-- Accept returned books.
-- Manage reservations.
-- Update book availability.
-- Monitor room and seat occupancy.
-- Manage overdue records.
-- Record penalties.
-- Send student notifications.
+### 💰 8. Penalty Management
 
-### 🛡️ Admin Dashboard
+Automatic overdue penalty calculation.
 
-- Manage students and staff.
-- Add, edit and delete books.
-- Manage book categories.
-- Configure library floors and rooms.
-- Manage seating arrangements.
-- Configure default penalty rates.
-- Change penalty rates for individual books.
-- Manage announcements.
-- View reports and analytics.
-
----
-
-## 🔐 Demo Login Credentials
-
-The prototype includes three predefined demonstration accounts.
-
-| Role | User ID | Password |
-|---|---|---|
-| 🎓 Student | `User1` | `User@1234` |
-| 👨‍💼 Staff | `Staff1` | `Staff@1234` |
-| 🛡️ Admin | `Admin1` | `Admin@1234` |
-
-**Automatic Role-Based Redirection**
+**Formula:**
 
 ```text
-User1   → Student Dashboard
-Staff1  → Staff Dashboard
-Admin1  → Admin Dashboard
+Penalty = Delayed Days × Daily Penalty Rate
 ```
 
-> ⚠️ These credentials are for demonstration purposes only. Use secure backend authentication before deploying the system for real users.
+**Example:**
+
+```text
+Due Date: November 15
+Return Date: November 20
+Delayed Days: 5
+Daily Penalty: ₹5
+
+Total Penalty = 5 × ₹5 = ₹25
+```
+
+Penalty configuration:
+
+- Default penalty rate.
+- Category-wise penalty rates.
+- Individual book penalty rates.
+- Overdue records.
+- Student-wise penalty history.
+- Pending and resolved penalty records.
+
+**Penalty priority:**
+
+1. Individual book penalty.
+2. Category penalty.
+3. Default penalty.
+
+Administrators can configure penalty rates, while staff can manage penalty records.
+
+### 👨‍💼 9. Staff Dashboard
+
+- Search student records.
+- View borrowing history.
+- Issue books.
+- Process returns.
+- Manage book reservations.
+- Monitor room and seat occupancy.
+- View overdue records.
+- Manage penalty records.
+- Send notifications.
+
+### 🛡️ 10. Admin Dashboard
+
+- Manage students and staff.
+- Add, edit, and delete books.
+- Manage book categories.
+- Configure library floors and sections.
+- Manage rooms and seating.
+- Configure penalty rates.
+- Monitor overdue records.
+- View reports and analytics.
+- Manage announcements.
+- View library statistics.
 
 ---
 
-## 🔄 System Workflow
+## 🔄 Project Workflow
 
 ### 1. Authentication Workflow
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B[Open Library Website]
-    B --> C[Login Page]
-    C --> D[Enter User ID and Password]
-    D --> E{Validate Credentials}
-    E -->|Invalid| F[Display Error Message]
-    F --> C
-    E -->|Valid| G{Identify User Role}
-    G -->|Student| H[Student Dashboard]
-    G -->|Staff| I[Staff Dashboard]
-    G -->|Admin| J[Admin Dashboard]
+    A([Start]) --> B[Login Page]
+    B --> C{Validate Credentials}
+    C -->|Invalid| D[Show Error]
+    D --> B
+    C -->|Valid| E{Identify Role}
+    E -->|Student| F[Student Dashboard]
+    E -->|Staff| G[Staff Dashboard]
+    E -->|Admin| H[Admin Dashboard]
 ```
 
 ### 2. Book Search Workflow
 
 ```mermaid
 flowchart TD
-    A([Student Dashboard]) --> B[Search for Book]
-    B --> C[Apply Search Filters]
-    C --> D[Display Book Details]
-    D --> E{Book Available?}
-    E -->|Yes| F[Display Availability]
-    E -->|No| G[Display Issued or Reserved Status]
-    F --> H[Show Floor and Section]
-    H --> I[Highlight Rack and Shelf on Map]
-    G --> J[View Availability Information]
+    A([Student Dashboard]) --> B[Find Books]
+    B --> C[Search by Title / Author / ISBN]
+    C --> D[Display Matching Books]
+    D --> E[Select Book]
+    E --> F[View Book Details]
+    F --> G[Check Availability]
+    G --> H[Show Book Location]
 ```
 
-### 3. Book Issue & Return Workflow
+### 3. Book Issue and Return Workflow
 
 ```mermaid
 flowchart TD
-    A([Staff Dashboard]) --> B[Search Student]
-    B --> C[Select Book]
-    C --> D{Book Available?}
-    D -->|No| E[Display Unavailable]
-    D -->|Yes| F[Issue Book]
-    F --> G[Calculate 14-Day Due Date]
-    G --> H[Update Book Inventory]
-    H --> I[Notify Student]
-    I --> J{Book Returned?}
-    J -->|Yes| K[Record Return]
-    J -->|No| L{Due Date Passed?}
-    L -->|No| J
-    L -->|Yes| M[Mark as Overdue]
-    M --> N[Calculate Applicable Penalty]
-    N --> O[Notify Student]
-    K --> P[Update Inventory and History]
+    A([Student Requests Book]) --> B[Staff Checks Availability]
+    B --> C{Book Available?}
+    C -->|No| D[Show Unavailable]
+    C -->|Yes| E[Issue Book]
+    E --> F[Calculate 14-Day Due Date]
+    F --> G[Update Inventory]
+    G --> H[Student Returns Book]
+    H --> I{Overdue?}
+    I -->|Yes| J[Calculate Penalty]
+    I -->|No| K[No Penalty]
+    J --> L[Update Records]
+    K --> L
 ```
 
-### 4. Room Booking Workflow
+### 4. Study Room Booking Workflow
 
 ```mermaid
 flowchart TD
-    A([Student Dashboard]) --> B[Open Room Booking]
-    B --> C[Select Floor]
-    C --> D[Select Room]
-    D --> E[Display 8 Seats]
-    E --> F[Check Seat Availability]
-    F --> G[Select Available Seat]
-    G --> H[Choose Start Time]
-    H --> I[Automatically Calculate End Time]
-    I --> J[Confirm One-Hour Booking]
-    J --> K{Booking Conflict?}
-    K -->|Yes| F
-    K -->|No| L[Save Reservation]
-    L --> M[Display Booking Confirmation]
-    M --> N[Booking Expires After One Hour]
-    N --> O[Release Seat Automatically]
+    A([Open Room Booking]) --> B[Select Floor]
+    B --> C[Select Room]
+    C --> D[Select Date and Time]
+    D --> E[Display Available Seats]
+    E --> F[Select Seat]
+    F --> G{Seat Available?}
+    G -->|No| H[Choose Another Seat]
+    H --> E
+    G -->|Yes| I[Confirm Booking]
+    I --> J[Reserve for One Hour]
+    J --> K[Send Confirmation]
+    K --> L[Release Seat After Expiry]
 ```
 
-### 5. Penalty Management Workflow
+### 5. Penalty Calculation Workflow
 
 ```mermaid
 flowchart TD
-    A([Book Return]) --> B[Check Due Date]
-    B --> C{Returned Late?}
+    A([Book Returned]) --> B[Check Due Date]
+    B --> C{Overdue?}
     C -->|No| D[Close Borrowing Record]
     C -->|Yes| E[Calculate Delayed Days]
-    E --> F{Individual Book Rate?}
-    F -->|Yes| G[Use Individual Rate]
-    F -->|No| H{Category Rate?}
-    H -->|Yes| I[Use Category Rate]
-    H -->|No| J[Use Default Rate]
-    G --> K[Calculate Total Penalty]
-    I --> K
-    J --> K
-    K --> L[Record Penalty]
-    L --> M[Update Student Dashboard]
-    M --> N[Notify Student]
+    E --> F[Get Applicable Penalty Rate]
+    F --> G[Calculate Total Penalty]
+    G --> H[Update Penalty History]
 ```
 
 ---
 
-## 🧩 Application Pages
+## 📄 Application Pages
 
 | Section | Pages |
 |---|---|
 | Common | Login, Profile, Notifications |
 | Student | Dashboard, Find Books, Book Details, Library Map, Seat Availability, Room Booking, My Books, Borrowing History, My Penalties |
-| Staff | Dashboard, Student Records, Issue Books, Return Books, Reservations, Overdue Management, Seat & Room Monitoring |
-| Admin | Dashboard, User Management, Book Management, Category Management, Floor Management, Room Management, Seating Management, Penalty Configuration, Reports, Announcements, Settings |
-
----
+| Staff | Dashboard, Student Records, Issue Books, Return Books, Book Reservations, Overdue Management, Seat and Room Monitoring |
+| Admin | Dashboard, User Management, Book Management, Category Management, Floor Management, Room Management, Seating Management, Penalty Configuration, Reports and Analytics, Announcement Management, Library Settings |
 
 ## 🛠️ Technology Stack
 
 | Technology | Purpose |
 |---|---|
 | Next.js | Frontend framework |
-| React | UI development |
+| React.js | UI development |
 | TypeScript | Type safety |
 | Tailwind CSS | Styling |
 | Lucide React | Icons |
 | Framer Motion | Animations |
-| Recharts | Analytics and charts |
+| Recharts | Data visualization |
 | LocalStorage | Prototype data persistence |
-
----
+| React Context | State management |
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-Make sure you have installed:
-
 - Node.js
 - npm
-- Visual Studio Code (recommended)
 - Git
 
 ### Installation
@@ -372,7 +339,7 @@ Make sure you have installed:
 git clone https://github.com/YOUR_USERNAME/Library_System_Management_Prototype.git
 ```
 
-**2. Navigate to the project folder**
+**2. Navigate to the project directory**
 
 ```bash
 cd Library_System_Management_Prototype
@@ -405,8 +372,7 @@ Library_System_Management_Prototype/
 │
 ├── public/
 │   ├── images/
-│   ├── icons/
-│   └── books/
+│   └── icons/
 │
 ├── src/
 │   ├── app/
@@ -415,68 +381,76 @@ Library_System_Management_Prototype/
 │   │   ├── staff/
 │   │   ├── admin/
 │   │   ├── books/
-│   │   ├── room-booking/
-│   │   ├── seat-availability/
+│   │   ├── rooms/
+│   │   ├── seats/
 │   │   └── notifications/
 │   │
 │   ├── components/
-│   │   ├── ui/
-│   │   ├── dashboard/
-│   │   ├── books/
-│   │   ├── booking/
-│   │   └── layout/
-│   │
 │   ├── context/
 │   ├── hooks/
 │   ├── lib/
-│   ├── services/
 │   ├── types/
 │   └── data/
 │
+├── public/
 ├── README.md
-├── package.json
-└── tsconfig.json
+└── package.json
 ```
 
-*This is the suggested architecture; the actual implementation may differ.*
+## 🧪 Testing Checklist
 
----
+- [ ] Student, Staff, and Admin login.
+- [ ] Role-based access control.
+- [ ] Book search and filtering.
+- [ ] Book issue and return.
+- [ ] Automatic 14-day due-date calculation.
+- [ ] Overdue detection.
+- [ ] Penalty calculation.
+- [ ] Individual book penalty configuration.
+- [ ] Room and seat selection.
+- [ ] One-hour booking validation.
+- [ ] Duplicate booking prevention.
+- [ ] Automatic booking expiry.
+- [ ] Notification functionality.
+- [ ] LocalStorage persistence.
+- [ ] Responsive design.
 
-## 🔒 Prototype Limitations
+## ⚠️ Prototype Limitations
 
-- Uses demonstration login credentials.
-- Uses LocalStorage for prototype persistence.
-- Uses sample library and user data.
-- Notifications are simulated within the application.
-- The interactive library map is schematic.
-- Real-time multi-user synchronization requires a backend.
-- Production authentication and authorization require secure server-side implementation.
+- Uses sample/mock data.
+- Uses LocalStorage for data persistence.
+- Authentication is for demonstration only.
+- Notifications are simulated in-app.
+- No real payment gateway.
+- No live university database integration.
+- Library map is a prototype layout.
 
----
+A production version would require secure backend authentication, database integration, server-side authorization, and appropriate data protection.
 
 ## 🔮 Future Enhancements
 
-- Real-time database integration.
-- University SSO authentication.
-- QR code book scanning.
-- Digital library cards.
-- Real-time seat synchronization.
+- Backend integration using Node.js or FastAPI.
+- Database integration using PostgreSQL or Supabase.
+- Secure authentication and authorization.
+- QR-code-based book issue and return.
+- Real-time seat availability.
 - Email and push notifications.
-- Advanced book recommendations.
-- Mobile application integration.
+- Online penalty payment integration.
+- AI-powered book recommendations.
+- Advanced library analytics.
 
 ---
 
-## 🎯 Project Goal
+## 👨‍💻 Project Information
 
-To transform traditional university library operations into a smarter, more accessible and efficient digital experience.
+**Project:** Smart University Library Management System
 
-**Search Smarter. Find Faster. Book Easier. Learn Better.**
+**Domain:** Education / Library Management
+
+**Type:** Web Application Prototype
+
+**Purpose:** To make university library management smarter, faster, and more accessible through technology.
 
 ---
 
-<p align="center">
-  📚 <strong>Smart University Library Management System</strong>
-  <br/>
-  Built with ❤️ for a smarter library experience.
-</p>
+**📚 Built with ❤️ using Next.js, React, and TypeScript.**
